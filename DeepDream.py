@@ -110,6 +110,7 @@ def main():
 
             #this will usually be like 3 or 4 octaves
             #Step 5 output deep dream image via matplotlib
+            save_array(img/255.0)
             show_array(img/255.0)
 
 
@@ -123,7 +124,7 @@ def main():
     img0 = np.float32(img0)
 
     #Step 4 - Apply gradient ascent to that layer
-    render_deepdream(tf.square(T('mixed4c')), img0)
+    render_deepdream(tf.square(T(layer)), img0)
 
 
 if __name__ == '__main__':
